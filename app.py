@@ -5,7 +5,7 @@ import joblib
 import os
 
 # --- 1. PAGE CONFIG (Basic UI Requirement) ---
-st.set_page_config(page_title="Chicago Crime POC", layout="centered")
+st.set_page_config(page_title="Chicago Crime", layout="centered")
 
 # --- 2. LOAD ASSETS with Error Handling (Deployment Requirement) ---
 @st.cache_resource
@@ -68,7 +68,7 @@ else:
             st.divider()
             st.metric(label="Arrest Probability Score", value=f"{prediction_prob*100:.2f}%")
             
-            # Operational Logic based on your 0.70 Threshold
+            # Operational Logic based on 0.70 Threshold
             if prediction_prob >= 0.70:
                 st.error("Result: HIGH PROBABILITY (Recommend immediate unit dispatch)")
             else:
